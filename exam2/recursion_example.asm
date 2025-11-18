@@ -49,7 +49,7 @@ fibonnaci_basecase1:
 
 fibonnaci:
 	li $t1, 1 
-	beqz $a0, fibonnaci_basecase0
+	beqz $a0,     fibonnaci_basecase0
 	beq $t1, $a0, fibonnaci_basecase1
 	
     addiu $sp, $sp, -12      # Allocate 12 bytes

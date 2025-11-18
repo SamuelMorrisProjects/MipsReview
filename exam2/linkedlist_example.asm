@@ -1,9 +1,6 @@
 #       Pratice for exam 2
 #       Simple linked list impl
 
-
-
-
 .text
 .globl main
 .ent main
