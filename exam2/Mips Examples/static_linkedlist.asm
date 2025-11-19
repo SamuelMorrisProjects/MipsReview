@@ -24,10 +24,8 @@ main:
 
 .end main
 
-
-
 .data
-# linked list static version 
+# Linked list static version 
 node1: .word 1  node2
 node2: .word 2  node3
-node3: .word 3  0
+node3: .word 3  0 # Null ptr
