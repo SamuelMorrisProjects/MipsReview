@@ -33,7 +33,6 @@ main:
     jr $t0
 
 
-
     mo_case: la $a0, monday
         jal print_str
         j end_switch
@@ -54,12 +53,8 @@ main:
         j end_switch 
     su_case: la $a0, sunday
         jal print_str
-
     end_switch: li $v0, 10 
     syscall
-
-
-
 
 .end main
 

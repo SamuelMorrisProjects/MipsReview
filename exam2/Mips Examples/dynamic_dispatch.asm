@@ -37,6 +37,7 @@ greet_person:
 	lw $v0, 0($sp)
 	addiu $sp, $sp, 8
 	jr $ra
+.end greet_person
 
 main:
 	la $a1, greeting
@@ -46,8 +47,6 @@ main:
 	jalr $t0
 	li $v0, 10 
 	syscall
-
-
 .end main
 
 .data 

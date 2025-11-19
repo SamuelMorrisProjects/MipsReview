@@ -72,12 +72,41 @@ fibonnaci:
     jr $ra
 
 
+# a0 - 1 .. n
+summation_recursion:
+	li $t1, 1 
+	beq $a0, $t1, summation_base
+	addiu $sp, $sp, -8
+	sw $ra, 0($sp)
+	sw $a0, 4($sp)
+
+	addi $a0, $a0, -1
+	jal summation_recursion
+	lw $a0, 4($sp)
+
+	add $v0, $a0, $v0
+
+	lw $ra, 0($sp)
+	lw $a0, 4($sp)
+	addiu $sp, $sp, 8
+	jr $ra
+
+.end summation_recursion
+summation_base:
+	li $v0, 1 
+	jr $ra
+.end summation_base
+
+
 main:
 #	li $a0, 10
 #	jal count_down 
 
 #	li $a0, 6
 #	jal fibonnaci
+
+	li $a0, 5
+	jal summation_recursion
 
 	move $a0, $v0
 	li $v0, 1
